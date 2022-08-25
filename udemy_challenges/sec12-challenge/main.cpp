@@ -62,6 +62,7 @@ int main() {
     cout << "Result: " ;
     print(results, results_size);
     
+    delete [] results;
     cout << endl;
 
     return 0;
@@ -70,7 +71,7 @@ int main() {
 void print(const int *const arr, size_t arr_size)
 {
   cout << "[ ";
-  for(size_t i=0; i < arr_size; i++)
+  for(size_t i{0}; i < arr_size; i++)
     cout << arr[i] << ' ';
   cout << ']' << endl;
 }
@@ -78,11 +79,11 @@ void print(const int *const arr, size_t arr_size)
 int *apply_all(const int *const arr1, size_t arr1_size, const int *const arr2, size_t arr2_size)
 {
   int *arr{nullptr};
-  arr = new int [arr1_size + arr2_size +1];
+  arr = new int [arr1_size + arr2_size];
 
   int z{0};
-  for(size_t y =0 ; y< arr2_size; y++)
-    for(size_t x =0 ; x< arr1_size; x++)
+  for(size_t y{0} ; y< arr2_size; y++)
+    for(size_t x{0} ; x< arr1_size; x++)
     {
       arr[z] = arr1[x] * arr2[y];
       z++;
