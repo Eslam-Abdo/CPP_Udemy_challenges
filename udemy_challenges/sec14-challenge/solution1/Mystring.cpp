@@ -113,6 +113,12 @@ Mystring Mystring::operator+(const Mystring &rhs) const
 }
 Mystring Mystring::operator*(int n) const
 {
+    // Mystring temp;
+    // for(int i; i<=n; i++)
+    //     temp = temp + *this;
+    // return temp;
+
+    /* another solution*/
     char *buff{nullptr};
     buff = new char[(std::strlen(str)*n) + 1];
     std::strcpy(buff,str);
@@ -130,7 +136,8 @@ Mystring &Mystring::operator+=(const Mystring &rhs)
     // std::strcat(buff,rhs.str);
     // str = buff;
     // buff = nullptr;
-
+    
+    /* another solution*/
     *this = *this + rhs; 
     return *this;
 }
@@ -172,11 +179,11 @@ bool Mystring::operator!=(const Mystring &rhs) const
 }
 bool Mystring::operator>(const Mystring &rhs) const
 {
-    return *str > *rhs.str;
+    return (std::strcmp(str,rhs.str) > 0);
 }
 bool Mystring::operator<(const Mystring &rhs) const
 {
-    return *str < *rhs.str;
+    return (std::strcmp(str,rhs.str) < 0);
 }
 
 

@@ -159,9 +159,9 @@ bool operator!=(const Mystring &lhs, const Mystring &rhs)
 }
 bool operator>(const Mystring &lhs, const Mystring &rhs)
 {
-    return *lhs.str > *rhs.str;
+    return (std::strcmp(lhs.str,rhs.str) > 0);
 }
 bool operator<(const Mystring &lhs, const Mystring &rhs)
 {
-    return *lhs.str < *rhs.str;
+    return (std::strcmp(lhs.str,rhs.str) < 0);
 }
