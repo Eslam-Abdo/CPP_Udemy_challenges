@@ -36,7 +36,6 @@ int main()
     size_t  letters_size{letters.length()};
     string spaces(letters_size-1, ' ');
 
-  
     for(size_t i{0}; i< letters_size; i++)
     {
         cout << spaces.substr(i,letters_size) << letters.substr(0,i+1) ; 
@@ -44,12 +43,6 @@ int main()
             cout << letters.at(y);
         cout << endl;
     }
-
-
-
-
-    
-
 
     return 0;
 }
